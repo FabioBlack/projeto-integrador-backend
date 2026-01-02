@@ -17,6 +17,11 @@ export class ProdutoController {
     return this.produtoService.findAll();
   }
 
+  @Get('fornecedor/:id')
+  findByFornecedor(@Param('id') id: string) {
+    return this.produtoService.findByFornecedor(+id);
+  }
+
   @Get(':id')
   findOne(@Param('id') id: string) {
     return this.produtoService.findOne(+id);
